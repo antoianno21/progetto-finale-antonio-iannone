@@ -1,0 +1,41 @@
+    .gridLayout{
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .navigationEffect:hover {
+        scale: 1.1;
+        transition: 0.4s;
+        cursor: pointer;
+    } 
+    
+    .mainForm {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .signUp {
+        width: 50%;
+        height: 100%;
+    }
+    
+    .loading {
+        font-size: 3rem;
+        display: block;
+        margin: 0px auto;
+    }
+    
+    .chat_game_container {
+        margin-top: 5px;
+        padding: 0px 3px;
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #1b212b;
+        overflow-y: scroll;
+    }
