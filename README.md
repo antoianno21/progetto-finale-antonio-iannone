@@ -1,12 +1,74 @@
-# React + Vite
+# ReHack - Documentazione del Progetto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrizione
+ReHack è un'applicazione web sviluppata con React che permette agli utenti di navigare, cercare e interagire con una vasta libreria di videogiochi. Gli utenti possono esplorare un ampio catalogo di giochi, filtrare i risultati in base a vari parametri, visualizzare dettagli sui giochi, aggiungerli o rimuoverli dai preferiti, leggere e partecipare a recensioni e chat dal vivo. Se autenticato, un utente può anche scrivere recensioni e inviare messaggi nella chat in tempo reale. Inoltre, l'app consente di visualizzare e modificare i propri dati e attività tramite la dashboard dell'account.
 
-Currently, two official plugins are available:
+## API
+Il progetto utilizza l'API di Rawg.io (https://rawg.io/apidocs) per ottenere i dati relativi ai videogiochi, e Supabase come Backend-as-a-Service (BaaS) per l'autenticazione degli utenti, la gestione del database e la chat in tempo reale.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stile
+L'applicazione utilizza CSS e Bootstrap 5.3 per lo stile e il layout responsive.
 
-## Expanding the ESLint configuration
+## Pagine
+- **Home Page**: Elenco dei videogiochi con la possibilità di filtrarli in base a diversi parametri.
+- **Pagina Dettaglio**: Dettagli del gioco selezionato, con la possibilità di aggiungerlo ai preferiti, visualizzare immagini e recensioni, e partecipare alla chat in tempo reale.
+- **Risultati di Ricerca**: Visualizza i giochi in base ai criteri di ricerca come nome, genere, piattaforma, popolarità, punteggio, e così via.
+- **Pagine di Autenticazione**: Pagine per la registrazione e il login dell'utente.
+- **Pagina Profilo**: Visualizza le informazioni dell'utente, i giochi preferiti, le recensioni scritte e consente la modifica dei dati utente.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Interazioni Utente
+### Utenti non autenticati:
+- Esplorare l'elenco dei giochi.
+- Cercare giochi per nome o altri criteri.
+- Filtrare i giochi per genere, piattaforma, ecc.
+- Visualizzare informazioni dettagliate sui giochi.
+- Leggere le recensioni e la chat in tempo reale di altri utenti.
+- Registrarsi o accedere tramite email e password.
+
+### Utenti autenticati:
+- Aggiungere o rimuovere giochi dai preferiti.
+- Scrivere recensioni.
+- Partecipare alla chat in tempo reale.
+- Visualizzare e modificare le informazioni del proprio profilo.
+
+## Context
+L'applicazione utilizza diversi **Context Provider** di React per gestire lo stato globale:
+- **SessionContext**: Gestisce i dati della sessione dell'utente.
+- **FavContext**: Gestisce i giochi salvati nei preferiti.
+
+## Dipendenze
+Le principali dipendenze utilizzate nel progetto sono:
+
+- `@supabase/supabase-js`: per l'interazione con il backend Supabase.
+- `bootstrap`: per la gestione dello stile e del layout.
+- `bootstrap-icons`: per le icone di Bootstrap.
+- `@vercel/analytics`: per l'analisi delle performance.
+- `prime-react`: per l'UI e la gestione degli elementi
+- `react`: per la libreria di rendering delle interfacce.
+- `react-dom`: per il rendering su DOM.
+- `react-router`: per la navigazione tra le pagine.
+- `react-spinners`: per le animazioni di caricamento.
+- `@mui/material`: per i componenti UI di Material-UI 
+
+
+
+## Funzionalità principali
+- **Sistema di autenticazione**: Registrazione e login degli utenti tramite email e password.
+- **Filtro giochi**: Filtraggio avanzato per generi, nome, piattaforme, ecc.
+- **Design responsive**: L'app è completamente responsive, adattandosi a schermi di dimensioni piccole, medie e grandi.
+- **Recensioni utente**: Gli utenti possono leggere e scrivere recensioni sui giochi.
+- **Gestione dei preferiti**: Gli utenti possono salvare i giochi nella loro lista di preferiti.
+
+L'applicazione segue le migliori pratiche di sviluppo, tra cui l'uso di custom hooks, Context API e un design a componenti, per un codice pulito, modulare e facilmente manutenibile.
+
+## Struttura del progetto
+Il progetto è organizzato in diverse cartelle per facilitare la gestione del codice:
+- **Cartella `components`**: Contiene i componenti UI riutilizzabili (Navbar, Sidebar).
+- **Cartella `pages`**: Contiene le viste principali dell'applicazione.
+- **Cartella `context`**: Gestisce i context per l'autenticazione, i preferiti, ecc.
+- **Cartella `hooks`**: Contiene i custom hooks.
+- **Cartella `utils`**: Funzioni di utilità (ad esempio per il formato delle date).
+- **Cartella `layout`**: Gestisce il layout e le strutture generali.
+
+## Link del progetto
+Puoi trovare il progetto live a questo indirizzo: 
